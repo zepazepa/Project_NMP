@@ -1,4 +1,4 @@
-package com.ubayaprojectnmp.p
+package com.ubayaprojectnmp.cerbung
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.ubayaprojectnmp.p", appContext.packageName)
+        assertEquals("com.ubayaprojectnmp.cerbung", appContext.packageName)
     }
 }

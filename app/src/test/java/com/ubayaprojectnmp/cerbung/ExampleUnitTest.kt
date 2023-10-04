@@ -1,4 +1,4 @@
-package com.ubayaprojectnmp.p
+package com.ubayaprojectnmp.cerbung
 
 import org.junit.Test
 
