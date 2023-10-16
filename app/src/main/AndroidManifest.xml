@@ -13,6 +13,21 @@
         android:theme="@style/Theme.CerBung"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityRead"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityCreate"
+            android:exported="false" />
+        <activity
+            android:name=".ActivitySignUp"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityLogIn"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityHome"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
