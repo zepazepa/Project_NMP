@@ -6,4 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".ActivityCreate">
 
+    <EditText
+        android:id="@+id/editTextTitleCreate"
+        android:layout_width="330dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="37dp"
+        android:ems="10"
+        android:hint="Cerbung Title"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSynopsisCreate"
+        android:layout_width="330dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Short Description"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitleCreate" />
+
+    <Button
+        android:id="@+id/buttonNextCreate"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:text="Next"
+        android:textSize="20sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="463dp" />
+
+    <Spinner
+        android:id="@+id/spinnerGenreCreate"
+        android:layout_width="330dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextURLCreate" />
+
+    <EditText
+        android:id="@+id/editTextURLCreate"
+        android:layout_width="330dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="insert valid image URL"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSynopsisCreate" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="45dp"
+        android:text="1 of 3"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonNextCreate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerGenreCreate" />
 </androidx.constraintlayout.widget.ConstraintLayout>
