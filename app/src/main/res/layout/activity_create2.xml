@@ -5,7 +5,7 @@
     android:id="@+id/RadioButtonRestricted"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityCreate2">
+    tools:context=".Create2Activity">
 
     <EditText
         android:id="@+id/editTextParagraphCreate"
@@ -17,10 +17,12 @@
         android:ems="10"
         android:hint="first paragraph"
         android:inputType="textMultiLine"
+        android:maxLength="100"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GroupAccess" />
+        app:layout_constraintTop_toBottomOf="@+id/GroupAccess"
+        app:counterEnabled="true" />
 
     <Button
         android:id="@+id/buttonNextCreate2"
@@ -74,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
+            android:tag="Restricted"
             android:text="Restricted \n(all approved users can contribute)"
             android:textSize="16sp" />
 
@@ -82,6 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
+            android:tag="Public"
             android:text="Public \n(all users can contribute)"
             android:textSize="16sp" />
 
@@ -113,5 +117,11 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextParagraphCreate" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="357dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
