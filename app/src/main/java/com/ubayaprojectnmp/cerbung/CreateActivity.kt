@@ -10,6 +10,8 @@ import com.ubayaprojectnmp.cerbung.databinding.ActivityCreateBinding
 
 class CreateActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateBinding
+    var paragraf = "";
+    var access="";
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateBinding.inflate(layoutInflater)
@@ -27,6 +29,10 @@ class CreateActivity : AppCompatActivity() {
             binding.editTextURLCreate.setText(intent.getStringExtra("URL").toString())
             binding.spinnerGenreCreate.setSelection(intent.getStringExtra("GENRE").toString().toInt())
         }
+        if (intent.getStringExtra("PARAGRAF")!=null){
+            paragraf = intent.getStringExtra("PARAGRAF").toString();
+            access = intent.getStringExtra("ACCESS").toString();
+        }
         binding.buttonNextCreate.setOnClickListener {
             var title = binding.editTextTitleCreate.text.toString()
             var sinopsis = binding.editTextSynopsisCreate.text.toString()
@@ -41,6 +47,8 @@ class CreateActivity : AppCompatActivity() {
                 intent.putExtra("SYNOPSIS",sinopsis)
                 intent.putExtra("URL",imgurl)
                 intent.putExtra("GENRE",genre)
+                intent.putExtra("ACCESS",access)
+                intent.putExtra("PARAGRAF",paragraf)
                 startActivity(intent)
             }
         }

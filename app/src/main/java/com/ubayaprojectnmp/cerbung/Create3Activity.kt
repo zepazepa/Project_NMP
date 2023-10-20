@@ -27,13 +27,12 @@ class Create3Activity : AppCompatActivity() {
         }
         binding.buttonPrevCreate.setOnClickListener {
             val intent = Intent(this,Create2Activity::class.java)
-            /*
-            intent.putExtra("TITLE",intent.getStringExtra("TITLE").toString())
-            intent.putExtra("SYNOPSIS",intent.getStringExtra("SYNOPSIS").toString())
-            intent.putExtra("URL",intent.getStringExtra("URL").toString())
-            intent.putExtra("GENRE",intent.getStringExtra("GENRE").toString())
-            intent.putExtra("ACCESS",intent.getStringExtra("ACCESS").toString())
-            intent.putExtra("PARAGRAF",intent.getStringExtra("PARAGRAF").toString())*/
+            intent.putExtra("TITLE",title)
+            intent.putExtra("SYNOPSIS",sinopsis)
+            intent.putExtra("URL",imgurl)
+            intent.putExtra("GENRE",genre)
+            intent.putExtra("ACCESS",access)
+            intent.putExtra("PARAGRAF",paragraf)
             startActivity(intent)
         }
         binding.buttonPublishCreate.setOnClickListener {
