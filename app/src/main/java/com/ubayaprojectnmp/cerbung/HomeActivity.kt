@@ -17,9 +17,10 @@ class HomeActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = lm
         binding.recyclerView.adapter = CerbungAdapter()
 
-        binding.buttonCreate.setOnClickListener {
-            val intent = Intent(this,CreateActivity::class.java)
-            startActivity(intent)
-        }
+//        binding.buttonCreate.setOnClickListener {
+//            val intent = Intent(this,CreateActivity::class.java)
+//            startActivity(intent)
+//        }
+        //disabled because button to go to create page should be changed
     }
 }
