@@ -21,12 +21,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <EditText
+                android:id="@+id/editTextParagraphCreate"
+                android:layout_width="0dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="Tulis Paragraf"
+                android:inputType="textMultiLine"
+                android:maxLength="70"
+                android:textSize="16sp"
+                app:counterEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+            <TextView
+                android:id="@+id/textViewWordCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="left"
+                android:text="(0 out of 70 characters)"
+                android:textAlignment="gravity"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextParagraphCreate" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textCreateRead" />
+
             <ImageView
                 android:id="@+id/imagePosterRead"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="16dp"
                 android:text="Title"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="by author"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,46 +101,84 @@
                 android:id="@+id/textCreateRead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:tag="PUBLIC"
                 android:text="17/10/2023"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textAuthorRead" />
 
-            <TextView
-                android:id="@+id/textInfo"
+            <Button
+                android:id="@+id/btnFollow"
+                style="@style/Widget.Material3.Button.IconButton"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="info"
-                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Follow"
+                android:textSize="14sp"
+                app:icon="@drawable/icon_add"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWordCount" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:tag="PUBLIC"
+                android:text="Submit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWordCount" />
+
+            <ImageView
+                android:id="@+id/imgPoster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textAuthorRead"
+                app:srcCompat="@drawable/icon_paragraf" />
+
+            <TextView
+                android:id="@+id/textPara"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:text="2"
+                app:layout_constraintStart_toEndOf="@+id/imgPoster"
                 app:layout_constraintTop_toBottomOf="@+id/textAuthorRead" />
 
             <TextView
-                android:id="@+id/textParagraphs"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="150dp"
-                android:layout_marginEnd="8dp"
-                android:text="TextView"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imagePosterRead" />
-
-            <Button
-                android:id="@+id/BtnBack"
+                android:id="@+id/textLike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="Back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="152dp"
+                android:text="0"
+                app:layout_constraintEnd_toStartOf="@+id/textCreateRead"
+                app:layout_constraintTop_toBottomOf="@+id/textAuthorRead" />
+
+            <ImageButton
+                android:id="@+id/imgLike"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@android:color/transparent"
+                android:tag="NOTLIKE"
+                app:layout_constraintEnd_toStartOf="@+id/textLike"
+                app:layout_constraintTop_toBottomOf="@+id/textAuthorRead"
+                app:srcCompat="@drawable/icon_notlike" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

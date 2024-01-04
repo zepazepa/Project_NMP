@@ -10,17 +10,23 @@
         android:visible="true"
         app:showAsAction="always" />
     <item
-        android:id="@+id/ItemUsers"
-        android:enabled="true"
-        android:icon="@drawable/icon_users"
-        android:title="Users"
-        android:visible="true"
-        app:showAsAction="always" />
+        android:id="@+id/ItemFollow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/icon_follow"
+        android:title="Follow" />
     <item
         android:id="@+id/ItemCreate"
         android:enabled="true"
         android:icon="@drawable/icon_create"
         android:title="Create"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/ItemUsers"
+        android:enabled="true"
+        android:icon="@drawable/icon_users"
+        android:title="Users"
         android:visible="true"
         app:showAsAction="always" />
     <item

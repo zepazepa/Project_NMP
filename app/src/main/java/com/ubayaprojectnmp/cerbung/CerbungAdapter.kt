@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.ubayaprojectnmp.cerbung.databinding.CerbungItemBinding
 
-class CerbungAdapter(): RecyclerView.Adapter<CerbungAdapter.CerbungViewHolder>() {
+class CerbungAdapter(val listCerbung:ArrayList<Cerbung>, val user_id:Int): RecyclerView.Adapter<CerbungAdapter.CerbungViewHolder>() {
     class CerbungViewHolder(val binding: CerbungItemBinding):RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CerbungViewHolder {
@@ -16,26 +16,27 @@ class CerbungAdapter(): RecyclerView.Adapter<CerbungAdapter.CerbungViewHolder>()
     }
 
     override fun getItemCount(): Int {
-        return Global.cerbung.size
+        return listCerbung.size
     }
 
     override fun onBindViewHolder(holder: CerbungViewHolder, position: Int) {
-        var id = position
-        var url = Global.cerbung[id].imgurl
         with(holder.binding){
+            var img_url = listCerbung[position].img_url
             var builder = Picasso.Builder(holder.itemView.context)
-            builder.listener { picasso, url, exception -> exception.printStackTrace() }
-            builder.build().load(url).into(ImagePoster)
-            textTitle.setText(Global.cerbung[id].title)
-            var author = "by "+ Global.cerbung[id].creator
+            builder.listener { picasso, uri, exception -> exception.printStackTrace() }
+            builder.build().load(img_url).into(ImagePoster)
+            textTitle.setText(listCerbung[position].title)
+            var author = "by ${listCerbung[position].name}"
             textAuthor.setText(author)
-            textSynopsis.setText(Global.cerbung[id].sinopsis)
-            var info = "par: ${Global.cerbung[id].num_paragraf.toString()}; Like: ${Global.cerbung[id].like.toString()}"
-            textInfo.setText(info)
+            textSynopsis.setText(listCerbung[position].description)
+            txtLike.setText(listCerbung[position].like.toString())
+            textInfo.setText(listCerbung[position].num_paragraf.toString())
 
             buttonRead.setOnClickListener {
+                val id = listCerbung[position].idcerbung
                 val intent = Intent(it.context,ReadActivity::class.java)
-                intent.putExtra("ID",id)
+                intent.putExtra("cerbung_id",id)
+                intent.putExtra("user_id",user_id)
                 it.context.startActivity(intent)
 
             }

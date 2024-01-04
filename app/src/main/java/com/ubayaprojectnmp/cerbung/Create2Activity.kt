@@ -32,14 +32,14 @@ class Create2Activity : AppCompatActivity() {
             access = radio.tag.toString()
         }
         binding.editTextParagraphCreate.doOnTextChanged{s,start,before,count->
-            binding.textViewWordCount.text = "(${binding.editTextParagraphCreate.text.toString().length} out of 100 characters)"
+            binding.textViewWordCount.text = "(${binding.editTextParagraphCreate.text.toString().length} out of 70 characters)"
         }
         if (intent.getStringExtra("PARAGRAF")!=null){
             var acc = intent.getStringExtra("ACCESS")
-            if (acc == "Restricted"){
+            if (acc == "RESTRICTED"){
                 binding.radioButtonAccess1.isChecked = true
             }
-            else if(acc =="Public"){
+            else if(acc =="PUBLIC"){
                 binding.radioButtonAccess2.isChecked = true
             }
             binding.editTextParagraphCreate.setText(intent.getStringExtra("PARAGRAF").toString())

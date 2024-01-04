@@ -17,12 +17,12 @@
         android:ems="10"
         android:hint="first paragraph"
         android:inputType="textMultiLine"
-        android:maxLength="100"
+        android:maxLength="70"
         android:textSize="16sp"
+        app:counterEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GroupAccess"
-        app:counterEnabled="true" />
+        app:layout_constraintTop_toBottomOf="@+id/GroupAccess" />
 
     <Button
         android:id="@+id/buttonNextCreate2"
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:tag="Restricted"
+            android:tag="RESTRICTED"
             android:text="Restricted \n(all approved users can contribute)"
             android:textSize="16sp" />
 
@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:tag="Public"
+            android:tag="PUBLIC"
             android:text="Public \n(all users can contribute)"
             android:textSize="16sp" />
 
@@ -110,7 +110,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
         android:gravity="left"
-        android:text="(0 out of 100 characters)"
+        android:text="(0 out of 70 characters)"
         android:textAlignment="gravity"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -18,9 +18,6 @@
             android:name=".UsersActivity"
             android:exported="false" />
         <activity
-            android:name=".PrefsActivity"
-            android:exported="false" />
-        <activity
             android:name=".Create3Activity"
             android:exported="false" />
         <activity
@@ -46,9 +43,6 @@
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
     </application>
 

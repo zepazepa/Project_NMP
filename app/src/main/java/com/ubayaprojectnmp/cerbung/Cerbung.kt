@@ -1,6 +1,18 @@
 package com.ubayaprojectnmp.cerbung
 
-class Cerbung (val id:Int, val title:String, val creator:String, val genre:Genre, val tglDibuat:String, val like:Int, val imgurl:String,
-val sinopsis:String,val num_paragraf:Int, val paragraf:String){
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Cerbung (val idcerbung:Int,
+                    val title:String,
+                    val name:String,
+                    val genre:Genre,
+                    val like:Int,
+                    val img_url:String,
+                    val description:String,
+                    val num_paragraf:Int,
+                    val akses:String,
+                    val waktu_dibuat:String):Parcelable{
 
 }

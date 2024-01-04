@@ -28,23 +28,6 @@
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/btnChangeProf"
-        android:layout_width="54dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="136dp"
-        android:text=""
-        app:cornerRadius="150dp"
-        app:icon="@drawable/icon_swap"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:iconSize="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.669"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
     <EditText
         android:id="@+id/editTextNameChange"
         android:layout_width="0dp"
@@ -99,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/switchNotif" />
 
     <EditText
-        android:id="@+id/editTextPassChange"
+        android:id="@+id/editTextPassOld"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
@@ -113,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/stripe" />
 
     <EditText
-        android:id="@+id/editTextPassChange2"
+        android:id="@+id/editTextPassConfirm"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
@@ -125,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassChange" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassOld" />
 
     <Button
         android:id="@+id/buttonChange"
@@ -137,6 +120,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassChange2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassConfirm" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

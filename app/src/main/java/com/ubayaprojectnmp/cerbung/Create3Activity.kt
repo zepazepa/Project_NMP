@@ -1,10 +1,16 @@
 package com.ubayaprojectnmp.cerbung
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.ubayaprojectnmp.cerbung.databinding.ActivityCreate3Binding
+import org.json.JSONObject
 
 class Create3Activity : AppCompatActivity() {
     private lateinit var binding:ActivityCreate3Binding
@@ -21,7 +27,7 @@ class Create3Activity : AppCompatActivity() {
         with(binding){
             textTitleConfirm.setText(title)
             textViewSynopsisConfirm.setText(sinopsis)
-            textViewGenre.setText(Global.genre[genre.toInt()].toString())
+            textViewGenre.setText(genre.toString())
             textViewAccess.setText(access)
             textViewParagraphConfirm.setText(paragraf)
         }
@@ -37,12 +43,40 @@ class Create3Activity : AppCompatActivity() {
         }
         binding.buttonPublishCreate.setOnClickListener {
             if(binding.checkBox.isChecked){
-                Global.cerbung.add(Cerbung(Global.cerbung.size, title,"aku",
-                    Genre(genre.toInt()+1,binding.textViewGenre.text.toString()),
-                    "31/10/2023",0,imgurl,sinopsis,1,paragraf))
-                Toast.makeText(this,"Data berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
-                val intent= Intent(this,HomeActivity::class.java)
-                startActivity(intent)
+                val q = Volley.newRequestQueue(this)
+                val url = "https://ubaya.me/native/160421033/cerbung_add.php"
+                val stringRequest = object : StringRequest(
+                    Request.Method.POST, url,{
+                        Log.d("apiresult", it)
+                        val obj = JSONObject(it)
+                        if (obj.getString("result")=="OK"){
+                            val intent= Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                            this.finish()
+                        }
+                        else{
+                            Toast.makeText(this,"Error!", Toast.LENGTH_SHORT).show()
+                        }
+                    },{
+                        Log.e("apiresult", it.message.toString())
+                    }){
+                    override fun getParams(): MutableMap<String, String>? {
+                        val params = HashMap<String, String>()
+                        params["title"] = title
+                        params["description"] = sinopsis
+                        params["num_like"] = "0"
+                        params["akses"] = access
+                        params["genre"] = genre
+                        params["img_url"] = imgurl
+                        params["paragraf"] = paragraf
+                        val sharedFile = "com.ubayaprojectnmp.cerbung"
+                        val sharedPreferences = getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+                        val id = sharedPreferences.getInt("user_id", 0)
+                        params["users_id"] = id.toString()
+                        return params
+                    }
+                }
+                q.add(stringRequest)
             }
             else{
                 Toast.makeText(this,"Check Terms and Conditions First", Toast.LENGTH_SHORT).show()
